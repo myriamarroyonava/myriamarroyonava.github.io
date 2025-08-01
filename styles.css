@@ -300,9 +300,11 @@ body {
   padding: 2rem;
   z-index: 1;
 }
-
+.hero-content-center small{
+  font-size: 1.4rem;
+}
 .hero-content-center h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
   letter-spacing: -0.5px;
 }
@@ -931,4 +933,5 @@ body {
   }
 
 }
+
 
