@@ -1,0 +1,932 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'FiraSans', sans-serif;
+  color: white; /* texto blanco para destacar sobre fondo oscuro */
+  overflow-x: hidden;
+}
+.fira-sans-thin {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.fira-sans-extralight {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.fira-sans-light {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.fira-sans-regular {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fira-sans-medium {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.fira-sans-semibold {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.fira-sans-bold {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.fira-sans-extrabold {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.fira-sans-black {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.fira-sans-thin-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.fira-sans-extralight-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.fira-sans-light-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.fira-sans-regular-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.fira-sans-medium-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.fira-sans-semibold-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.fira-sans-bold-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.fira-sans-extrabold-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.fira-sans-black-italic {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* HEADER CON CAMBIO EN SCROLL */
+.transparent-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 0 20px;
+  transition: background 0.4s ease; /* Transición suave del fondo */
+}
+
+/* Estado inicial: transparente */
+.transparent-header {
+  background: transparent;
+}
+
+/* Estado con scroll: fondo negro */
+.transparent-header.scrolled {
+  background: #C199DF;
+  /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);*/
+}
+
+/* Logo y menú: aseguramos que sean visibles en negro */
+.transparent-header img {
+  height: 50px;
+  transition: all 0.4s ease;
+}
+
+/* Menú hamburguesa: blanco siempre */
+.menu-toggle span {
+  background: white;
+  transition: all 0.3s ease;
+}
+
+/* Si el fondo es negro, el logo puede mantenerse claro */
+.transparent-header.scrolled img {
+  filter: brightness(1); /* Asegura que el logo blanco se vea bien */
+}
+.logo-center img {
+  height: 60px;
+  filter: brightness(100%); /* asegura que el logo se vea bien */
+}
+
+.menu-toggle {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Efecto opcional al hover del menú hamburguesa */
+.menu-toggle:hover span {
+  background: #ccc;
+}
+
+/* === MENÚ MÓVIL === */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Oculto */
+  width: 280px;
+  height: 100vh;
+  background: white;
+  z-index: 1500;
+  padding: 20px;
+  transition: right 0.4s ease;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+
+.mobile-menu.open {
+  right: 0; /* Visible */
+}
+
+.menu-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.menu-logo img {
+  height: 40px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+  z-index: 1501;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.mobile-menu ul li {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mobile-menu ul li a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.mobile-menu ul li a:hover {
+  color: #555;
+}
+
+/* === OVERLAY (fondo oscuro) === */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1499;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* En el CSS de .hero-background */
+.hero-background {
+  position: relative !important; /* ¡Muy importante! */
+  /*background: url('https://images.pexels.com/photos/32517510/pexels-photo-32517510/free-photo-of-primer-plano-de-un-diente-de-leon-con-semillas-arrastradas-por-el-viento.jpeg') no-repeat center center;*/
+  background: url('https://images.pexels.com/photos/33211640/pexels-photo-33211640.jpeg?_gl=1*1tkdkr2*_ga*MTM2MzkyMTI1OC4xNzQ0MzI0ODk1*_ga_8JE65Q40S6*czE3NTQwNDA5NzUkbzIwJGcxJHQxNzU0MDQxMDcxJGo1OSRsMCRoMA..') no-repeat center center;
+  
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+/* Capa oscura para mejorar legibilidad */
+.hero-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Ajusta opacidad si es muy oscuro */
+  z-index: 1; /* Detrás del texto, pero delante del canvas */
+  pointer-events: none;
+}
+
+.hero-content-center {
+  max-width: 800px;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.hero-content-center h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.description {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.9rem 2.5rem;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  font-size: 1.1rem;
+}
+
+.btn-primary:hover {
+  background: white;
+  color: black;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Responsive: Ajustes para móviles */
+@media (max-width: 768px) {
+  .transparent-header {
+    height: 70px;
+  }
+  .logo-center img {
+    height: 50px;
+  }
+  .menu-toggle {
+    right: 15px;
+  }
+  .hero-content-center h1 {
+    font-size: 2.3rem;
+  }
+  .tagline {
+    font-size: 1.4rem;
+  }
+  .description {
+    font-size: 1rem;
+  }
+}
+/* ========================================
+   SECCIÓN: TÍTULO DE SERVICIOS - Presencial y Online
+   ======================================== */
+
+.services-intro {
+  padding: 5rem 0;
+  text-align: center;
+  background: white;
+  color: black;
+}
+
+.services-intro .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.services-intro h2 {
+  font-size: 3.5rem;
+  color: black;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.services-intro h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: #5DBDE7;
+}
+
+.services-intro p {
+  font-size: 1.3rem;
+  color: #000;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0.8rem auto 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-intro h2 {
+    font-size: 3rem;
+  }
+  .services-intro p {
+    font-size: 1.1rem;
+  }
+}
+/* ========================================
+   SECCIONES DE SERVICIOS - Tarjetas con imagen
+   ======================================== */
+
+.services-section {
+  padding: 6rem 5%;
+  background: white;
+  color: black;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap; /* Para móvil */
+}
+
+.service-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+  border-color: #fff;
+}
+
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  filter: grayscale(100%); /* Blanco y negro */
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+  filter: initial;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  margin: 1.2rem 1rem 0.8rem;
+  color: black;
+  text-align: center;
+}
+
+.service-card p {
+  color: #000;
+  line-height: 1.7;
+  padding: 0 1rem 1.2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 4rem 5%;
+  }
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-card {
+    width: 100%;
+  }
+  .service-card img{
+    filter: none;
+  }
+}
+
+/* ========================================
+   SECCIÓN: MENSAJE CENTRAL - Mitades exactas
+   Ambos lados: 50% del ancho exactamente
+   ======================================== */
+
+.full-image-text {
+  display: flex; 
+  min-height: 70vh;
+  overflow: hidden;
+}
+
+/* Aseguramos que ambos hijos ocupen exactamente el 50% */
+.full-image-text .text-side,
+.full-image-text .image-side {
+  width: 50%; /* Refuerza el 50% */
+  position: relative;
+}
+
+/* Lado izquierdo: texto */
+.full-image-text .text-side {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 4rem 3%; /* Reducido lateralmente para no forzar scroll horizontal */
+  box-sizing: border-box;
+  background: #5DBDE7;
+}
+
+
+.full-image-text .text-side h2 {
+  font-size: 2.8rem;
+  padding-bottom: 50px;
+  line-height: 1.4;
+  max-width: 500px;
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+/*.full-image-text .text-side h2::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background: white;
+}*/
+
+/* Lado derecho: imagen */
+.full-image-text .image-side {
+  overflow: hidden;
+}
+
+.full-image-text .image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 0.8s ease;
+}
+
+.full-image-text .image-side img:hover {
+  transform: scale(1.08);
+  filter:initial;
+}
+
+/* ----------------------------------------
+   Responsive: En móvil, se apilan
+   ---------------------------------------- */
+
+@media (max-width: 768px) {
+  .full-image-text {
+    flex-direction: column;
+  }
+  .full-image-text .text-side,
+  .full-image-text .image-side {
+    width: 100%; /* Ocupan el 100% en móvil */
+    flex: none; /* Desactiva flex para evitar errores */
+  }
+  .full-image-text .text-side h2 {
+    font-size: 2.2rem;
+    padding-bottom: 30px;
+  }
+  .full-image-text .image-side {
+    height: 500px;
+  }
+  .full-image-text .image-side img{
+    filter: none;
+  }
+}
+
+/* ========================================
+   SECCIÓN: PROCESO DE TRABAJO
+   Tres pasos con íconos, títulos y descripciones
+   ======================================== */
+
+.proceso-trabajo {
+  padding: 6rem 5%;
+  background: white;
+  color: black;
+  text-align: center;
+}
+
+.proceso-trabajo .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.proceso-trabajo h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: black;
+  position: relative;
+  display: inline-block;
+}
+
+.proceso-trabajo h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: #5DBDE7;
+}
+
+.proceso-trabajo .subtitle {
+  font-size: 1.2rem;
+  color: #000;
+  max-width: 600px;
+  margin: 1rem auto 3rem;
+}
+
+/* Grid de tres pasos */
+.proceso-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.paso {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+}
+
+.icono {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icono img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.paso:hover .icono img {
+  transform: scale(1.1);
+}
+
+.paso h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.paso p {
+  color: #000;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .proceso-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .paso {
+    width: 100%;
+    max-width: 400px;
+  }
+  .proceso-trabajo h2{
+    font-size: 3rem;
+  }
+}
+
+/* ========================================
+   SECCIÓN: SOBRE MÍ - Versión centrada
+   Imagen redonda y pequeña, texto centrado
+   ======================================== */
+
+.about-me {
+  padding: 6rem 5%;
+  background: white;
+  color: black;
+  text-align: center;
+}
+
+.about-container-center {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Imagen redonda y pequeña */
+.about-image-circle {
+  margin: 0 auto 2rem;
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(208, 50, 161, 0.1);
+}
+
+.about-image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Título centrado */
+.about-text-center {
+  max-width: 700px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.about-text-center h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1.8rem;
+  color: black;
+  position: relative;
+  display: inline-block;
+}
+
+.about-text-center h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: #5DBDE7;
+}
+
+.about-text-center p {
+  line-height: 1.8;
+  color: #000;
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+}
+
+
+/* ========================================
+   SECCIÓN: FRASE INSPIRADORA - Minimalista y poderosa
+   ======================================== */
+
+.quote-section {
+  min-height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FF6399;
+  color: white;
+  text-align: center;
+  padding: 0 5%;
+  overflow: hidden;
+  position: relative;
+}
+
+.quote-content {
+  max-width: 900px;
+  padding: 2rem;
+}
+
+.quote-content blockquote {
+  font-size: 2.8rem;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  color: white;
+}
+
+/* En móviles, tamaño más ajustado */
+@media (max-width: 768px) {
+  .quote-content blockquote {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+}
+
+/* ========================================
+   SECCIÓN: CONTACTO FINAL - Minimalista
+   Logo, datos en fila, línea, copyright
+   ======================================== */
+
+.contact-footer {
+  padding: 4rem 5% 2rem;
+  background: #ad8cc6;
+  color: black;
+  text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.contact-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo pequeño y centrado */
+.contact-logo {
+  margin-bottom: 2.5rem;
+}
+
+.contact-logo img {
+  height: 80px;
+}
+
+/* Información de contacto en fila */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.info-item {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+}
+
+.info-item strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.info-item p {
+  color: #fff;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Línea horizontal */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  margin: 2rem 0;
+}
+
+/* Copyright */
+.copyright {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+/* Responsive: en móvil, los datos se apilan */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .info-item {
+    text-align: center;
+  }
+  .copyright {
+    font-size: 0.85rem;
+  }
+}
+
+/* Botón para subir al inicio */
+#scrollToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s, transform 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#scrollToTop:hover {
+  transform: translateY(-3px);
+  background: #333;
+}
+
+/* Mostrar cuando se hace scroll */
+#scrollToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive: en móviles, un poco más cerca del borde */
+@media (max-width: 768px) {
+  #scrollToTop {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}
