@@ -290,7 +290,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Ajusta opacidad si es muy oscuro */
+  background: rgba(0, 0, 0, 0.6); /* Ajusta opacidad si es muy oscuro */
   z-index: 1; /* Detrás del texto, pero delante del canvas */
   pointer-events: none;
 }
@@ -929,4 +929,5 @@ body {
     height: 45px;
     font-size: 1.3rem;
   }
+
 }
