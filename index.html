@@ -974,6 +974,7 @@
   height: 100vh;
   background: rgba(0,0,0,0.95);
   display: flex;
+  flex-drection: column;
   justify-content: center;
   align-items: center;
   transition: right 0.4s ease;
@@ -983,7 +984,9 @@
 .overlay.active {
   right: 0;
 }
-
+.logo.mobile{
+    width: 20%;
+}
 .overlay ul {
   list-style: none;
   text-align: center;
@@ -1038,7 +1041,7 @@
 
 <!-- MENÚ OVERLAY -->
 <nav class="overlay" id="overlayMenu">
-     <img src="assets/img/logo_blanco_myr.png" alt="Logo Myriam Arroyo Nava" class="logo">
+     <img src="assets/img/logo_blanco_myr.png" alt="Logo Myriam Arroyo Nava" class="logo mobile">
   <ul>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -1301,4 +1304,5 @@
 
     </body>
     </html>
+
 
