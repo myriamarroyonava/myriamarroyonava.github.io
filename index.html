@@ -1,238 +1,1302 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pscicoterapeuta Myriam X. Arroyo Nava</title>
-  <link rel="shortcut icon" href="assets/img/diente_de_leon.png" type="image/x-icon">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&amp;family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Smooch+Sans:wght@100..900&amp;display=swap" rel="stylesheet">
-</head>
-<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pscicoterapeuta Myriam X. Arroyo Nava</title>
+    <link rel="shortcut icon" href="assets/img/diente_de_leon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&amp;family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Smooch+Sans:wght@100..900&amp;display=swap" rel="stylesheet">
+    </head>
+    <style>
+        :root {
+  --lavanda: #c7c7ff;
+  --durazno: #ffd8be;
+  --menta: #a9ecbf;
+  --rosa: #f3bbe1;
+  --texto-oscuro: #333;
+  --blanco: #fff;
+    }
 
-  <!-- HEADER -->
-  <header class="transparent-header">
-    <div class="logo-center">
-      <img src="assets/img/logo_blanco_myr.png" alt="Logo Psc. Myriam Arroyo Nava">
-    </div>
-    <div class="menu-toggle" id="menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </header>
+    body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    background: #f4f6f9;
+    }
 
-  <!-- MENÚ MÓVIL -->
-  <div class="mobile-menu" id="mobile-menu">
-    <button class="close-btn" id="close-menu">×</button>
-    <div class="menu-logo">
-      <img src="assets/img/logo_amor.png" alt=" Logo Psc. Myriam Arroyo Nava">
-    </div>
-    <ul>
-      <li><a href="#servicios-intro" onclick="closeMobileMenu()">Servicios</a></li>
-      <li><a href="#proceso" onclick="closeMobileMenu()">Proceso</a></li>
-      <li><a href="#sobre-mi" onclick="closeMobileMenu()">Sobre Mí</a></li>
-      <li><a href="#contacto" onclick="closeMobileMenu()">Contacto</a></li>
-    </ul>
+    .container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        #fff 0%,
+        #fff 40%,
+        rgba(255, 255, 255, 0) 100%
+        ),
+        linear-gradient(to right, #da0e99, #5f29c7);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0) 70%
+    );
+    }
+
+    .hero-content {
+    position: relative;
+    text-align: center;
+    color: #222;
+    z-index: 1;
+    max-width: 650px;
+    padding: 2rem;
+    }
+
+    .hero-content h2 {
+    font-size: 1.2rem;
+    color: #db42a1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    }
+
+    .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    .hero-content .subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    }
+
+    .hero-content p {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    }
+
+    /* 💫 Botón Neumorphism */
+    /* From Uiverse.io by cssbuttons-io */ 
+    .btn {
+    position: relative;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 2.5em;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 6em;
+    transition: all 0.2s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+    }
+    .sp {
+    background: linear-gradient(
+        90deg,
+        #866ee7,
+        #ea60da,
+        #ed8f57,
+        #fbd41d,
+        #2c5eca
+        );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    display: block;
+    }
+    .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+    }
+
+    .btn::after {
+    background-color: #fff;
+    
+    }
+
+    .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+    }
+
+    /* ============================= */
+    /* 🌿 SECCIÓN DE SERVICIOS (2x2) */
+    /* ============================= */
+
+    .services {
+    padding: 6rem 2rem;
+    background: #f4f6f9;
+    text-align: center;
+    }
+
+    .section-title {
+    font-size: 2.5rem;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    }
+
+    .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    }
+
+    .service-card {
+    background: #f4f6f9;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 9px 9px 16px #d1d9e6, -9px -9px 16px #ffffff;
+    transition: all 0.3s ease;
+    }
+
+    .service-card:hover {
+    box-shadow: inset 6px 6px 12px #d1d9e6, inset -6px -6px 12px #ffffff;
+    transform: translateY(-5px);
+    }
+
+    .service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    }
+
+    .service-card h3 {
+    font-size: 1.4rem;
+    color: #5f29c7;
+    margin-bottom: 1rem;
+    }
+
+    .service-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    }
+
+    /* 📱 Responsive: una tarjeta por fila en móvil */
+    @media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    }
+
+    /* ============================= */
+    /* 🌿 SECCIÓN MOTIVACIONAL DIVIDIDA 50/50 */
+    /* ============================= */
+
+    .motivational {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    min-height: 90vh;
+    overflow: hidden;
+    }
+
+    /* COLUMNA DE TEXTO */
+    .mot-text {
+    flex: 1;
+    background: 
+        linear-gradient(to right, #da0e99, #5f29c7);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    }
+
+    .mot-content {
+    max-width: 500px;
+    }
+
+    .mot-text h2 {
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    }
+
+    /* BOTÓN */
+    .btn-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+    background: #fff;
+    color: #5f29c7;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* COLUMNA DE IMAGEN */
+    .mot-image {
+    flex: 1;
+    overflow: hidden;
+    }
+
+    .mot-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+    /* 📱 RESPONSIVE */
+    @media (max-width: 900px) {
+    .motivational {
+        flex-direction: column;
+    }
+
+    .mot-text {
+        padding: 4rem 2rem;
+    }
+
+    .mot-text h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .mot-image {
+        height: 320px;
+    }
+    }
+
+    /* ============================= */
+    /* 🌱 SECCIÓN PROCESO DE TRABAJO */
+    /* ============================= */
+
+
+    .proceso {
+    padding: 6rem 2rem;
+    background: #f4f6f9;
+    text-align: center;
+    }
+
+    .proceso-header h2 {
+    font-size: 2rem;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    }
+
+    .proceso-header p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    }
+
+    /* 🌈 GRID DE TARJETAS */
+    .proceso-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    }
+
+    /* ✨ TARJETAS CON EFECTO HOVER */
+    .card-container {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    }
+
+    .card {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    }
+
+    /* Frente */
+    .card .front-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    background: #fff;
+    }
+
+    .card .front-content p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: linear-gradient(-45deg, #62c2fe 0%, #ff53d4 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    /* Parte trasera */
+    .card .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #ff53d4 60%, #62c2fe 90%);
+    color: #fff;
+    padding: 2rem;
+    line-height: 1.5;
+    border-radius: inherit;
+    pointer-events: none;
+    transform: translateY(80%);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .card .content .heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    }
+
+    .card .content p {
+    font-size: 1rem;
+    max-width: 90%;
+    }
+
+
+    /* Hover */
+    .card:hover .content {
+    transform: translateY(0);
+    }
+
+    .card:hover .front-content {
+    transform: translateY(-30%);
+    }
+
+    .card:hover .front-content p {
+    opacity: 0;
+    }
+    /* 🔧 Centrado absoluto del texto */
+    .card .content > * {
+    position: relative;
+    top: 20%;
+    right: 10%;    
+    transform: translateY(-50%);
+    }
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+    .card-container {
+        width: 100%;
+        max-width: 320px;
+        height: 280px;
+    }
+    }
+
+    /* ============================= */
+    /* 💫 SECCIÓN FRASE INSPIRACIONAL */
+    /* ============================= */
+
+    .franja {
+    
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #ff53d4 60%, #62c2fe 90%);
+    padding: 5rem 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }   
+
+    .franja p {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    }
+
+    /* 🌙 Pequeña sombra para destacar */
+    .franja p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+    .franja {
+        padding: 4rem 1.5rem;
+    }
+
+    .franja p {
+        font-size: 1.4rem;
+    }
+    }
+    /* ============================= */
+    /* 🌸 SECCIÓN SOBRE MÍ - SIMPLE Y NEUMORPHISM */
+    /* ============================= */
+
+    .sobre-mi {
+    background: #f4f6f9;
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .sobre-mi-content {
+    text-align: center;
+    max-width: 750px;
+    }
+
+    .sobre-mi-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    }
+
+    .sobre-mi-img img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f4f6f9;
+    box-shadow: 8px 8px 16px #d1d5da,
+                -8px -8px 16px #ffffff;
+    transition: all 0.4s ease;
+    }
+
+    .sobre-mi-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px #cfd3da,
+                -4px -4px 10px #ffffff;
+    }
+
+    /* Texto */
+    .sobre-mi-texto h2 {
+    font-size: 2rem;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    .sobre-mi-texto p {
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+    .sobre-mi-img img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .sobre-mi-texto h2 {
+        font-size: 1.7rem;
+    }
+
+    .sobre-mi-texto p {
+        font-size: 1rem;
+    }
+    }
+
+    /* ============================= */
+    /* 🌸 SECCIÓN PAQUETES */
+    /* ============================= */
+    .paquetes {
+    padding: 5rem 2rem;
+    background: #f9f9fb;
+    text-align: center;
+    }
+
+    .paquetes-title {
+    font-size: 2rem;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    }
+
+    .paquetes-subtitle {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    }
+
+    /* Wrapper principal */
+    .wrapper {
+    width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .wrapper header {
+    height: 55px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    }
+
+    header label {
+    height: 100%;
+    z-index: 2;
+    width: 33.3%;
+    display: flex;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+    }
+
+    #tab-1:checked ~ header .tab-1,
+    #tab-2:checked ~ header .tab-2,
+    #tab-3:checked ~ header .tab-3 {
+    color: #fff;
+    }
+
+    header .slider {
+    position: absolute;
+    height: 85%;
+    border-radius: inherit;
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    transition: all 0.3s ease;
+    }
+
+    #tab-1:checked ~ header .slider {
+    left: 0%;
+    width: 33%;
+    }
+    #tab-2:checked ~ header .slider {
+    left: 33%;
+    width: 33%;
+    }
+    #tab-3:checked ~ header .slider {
+    left: 66%;
+    width: 33%;
+    }
+
+    .wrapper input[type="radio"] {
+    display: none;
+    }
+
+    /* Contenido */
+    .card-area {
+    overflow: hidden;
+    margin-top: 1.5rem;
+    }
+    .card-area .cards {
+    display: flex;
+    width: 300%;
+    transition: all 0.3s ease;
+    }
+
+    .cards .row {
+    width: 33.4%;
+    }
+
+    #tab-1:checked ~ .card-area .cards {
+    transform: translateX(0%);
+    }
+    #tab-2:checked ~ .card-area .cards {
+    transform: translateX(-33.4%);
+    }
+    #tab-3:checked ~ .card-area .cards {
+    transform: translateX(-66.8%);
+    }
+
+    /* Texto y detalles */
+    .price-details {
+    margin: 20px 0;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+    }
+    .price {
+    font-size: 50px;
+    font-weight: 600;
+    color: #b8187b;
+    }
+    .price-details p {
+    font-size: 16px;
+    color: #777;
+    }
+
+    .features {
+    text-align: left;
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    }
+    .features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #555;
+    }
+    .features i {
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 8px;
+    }
+
+    /* Botón */
+    .wrapper button {
+    width: 100%;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    height: 50px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    transition: transform 0.3s ease;
+    }
+    .wrapper button:hover {
+    transform: scale(0.98);
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+    .wrapper {
+        width: 90%;
+    }
+    }
+    /* 🌿 SECCIÓN DE TESTIMONIOS - armonizada con la paleta */
+    .testimonios-section {
+    background: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+
+    .testimonios-container {
+    background: #ffffff;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 8px 8px 20px rgba(95, 41, 199, 0.15),
+        -8px -8px 20px rgba(14, 210, 218, 0.15);
+    padding: 60px 40px;
+    transition: transform 0.3s ease;
+    }
+
+    .testimonios-container:hover {
+    transform: translateY(-5px);
+    }
+
+    .testimonios-container h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border-radius: 8px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    }
+
+    .testimonios-container .subtitulo {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    font-weight: 400;
+    }
+
+    /* 📱 Responsivo */
+    @media (max-width: 768px) {
+    .testimonios-container {
+        padding: 40px 25px;
+    }
+    .testimonios-container h2 {
+        font-size: 2rem;
+    }
+    }
+    /* 🌿 FOOTER */
+    .footer {
+    background: linear-gradient(to right, #da0e99, #5f29c7);
+    color: #fff;
+    padding: 60px 20px 30px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    }
+
+    .footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    }
+
+    .footer-logo img {
+    max-width: 300px;
+    margin-bottom: 40px;
+    }
+
+    .footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+    font-weight: 500;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    }
+
+    .footer-column p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    }
+
+    .footer-column a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    }
+
+    .footer-column a:hover {
+    text-decoration: underline;
+    }
+
+    .footer-bottom {
+    margin-top: 30px;
+    }
+
+    .footer-bottom hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    width: 90%;
+    margin: 0 auto 20px;
+    }
+
+    .footer-bottom p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    }
+
+    /* 📱 Responsivo */
+    @media (max-width: 768px) {
+    .footer-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer-logo img {
+        max-width: 200px;
+    }
+    }
+
+   /* === HEADER === */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* aseguramos que esté encima del hero */
+  background: transparent;
+}
+
+.header .logo {
+  height: 60px;
+  width: auto;
+}
+
+/* === MENÚ HAMBURGUESA === */
+.menu-icon {
+  position: absolute;
+  right: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 3px;
+   background: linear-gradient(
+        90deg,
+        #866ee7,
+        #ea60da,
+        #ed8f57,
+        #fbd41d,
+        #2c5eca
+        );
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animación al hacer clic */
+.menu-icon.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* === OVERLAY MENU === */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.4s ease;
+  z-index: 9998;
+}
+
+.overlay.active {
+  right: 0;
+}
+
+.overlay ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.overlay ul li {
+  margin: 20px 0;
+}
+
+.overlay ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.overlay ul li a:hover {
+  color: #c7c7ff; /* color de tu paleta */
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 25px;
+  }
+  .menu-icon {
+    right: 25px;
+  }
+  .header .logo {
+    height: 50px;
+  }
+  .menu-icon {
+  position: absolute;
+  right: 70px;
+    }
+}
+
+    </style>
+    <body>
+    <!-- 🌿 NAVBAR -->
+<!-- HEADER -->
+<header class="header">
+  <img src="assets/img/logo_amor.png" alt="Logo Myriam Arroyo Nava" class="logo">
+  <div class="menu-icon" id="menuIcon">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
+</header>
 
-<!-- FONDO OSCURO -->
-<div class="overlay" id="overlay"></div>
+<!-- MENÚ OVERLAY -->
+<nav class="overlay" id="overlayMenu">
+  <ul>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#paquetes">Paquetes</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
 
-  <!-- SECCIÓN HERO CON IMAGEN DE FONDO Y TEXTO CENTRADO -->
-  <section class="hero-background" id="hero">
-    <div class="hero-content-center">
-      <small class="fira-sans-extralight">Psicoterapeuta</small>
-      <h1 class="hero-title fira-sans-extralight">Myriam X. Arroyo Nava</h1>
-      <p class="tagline fira-sans-thin">Tu bienestar mental empieza aquí</p>
-      <p class="description fira-sans-thin  ">
-        Terapia Humanista para recuperar el equilibrio, 
-        sanar emociones y construir una vida con propósito.
-      </p>
-      <a href="https://api.whatsapp.com/send?phone=+5635387909&text=Agendar%20cita" target="_blank" class="btn-primary">Agenda tu cita</a>
-    </div>
-  </section>
 
-  <section id="servicios-intro" class="services-intro">
     <div class="container">
-      <h2 class="fira-sans-extralight">Servicios</h2>
-      <p>Terapia psicológica presencial y online</p>
+    <div class="hero-content">
+        <h2>Psicoterapeuta</h2>
+        <h1>Myriam X. Arroyo Nava</h1>
+        <p class="subtitle">Tu bienestar mental empieza aquí</p>
+        <p>Terapia Humanista para recuperar el equilibrio, sanar emociones y construir una vida con propósito.</p>
+        <button class="btn"><span class="sp">Agenda tu cita</span></button>
     </div>
-  </section>
+    </div>
 
-  <section id="servicios-1" class="services-section">
-    <div class="services-container">
-      <!-- Tarjeta 1: Terapia Individual -->
-      <div class="service-card">
+    <!-- Hero existente arriba -->
+
+    <section class="services" id="servicios">
+    <h2 class="section-title">Servicios de Psicoterapia</h2>
+    <div class="services-grid">
+        
+        <div class="service-card">
         <img src="assets/img/terapia_individual.jpg" alt="Terapia Individual">
         <h3>Terapia Individual</h3>
         <p>Espacio personalizado para acompañarte en procesos de ansiedad, depresión o momentos de crisis. Trabajamos en la reconstrucción de tu bienestar emocional.</p>
-      </div>
+        </div>
 
-      <!-- Tarjeta 2: Terapia de Pareja -->
-      <div class="service-card">
+        <div class="service-card">
         <img src="assets/img/Terapia_de_pareja.jpg" alt="Terapia de Pareja">
         <h3>Terapia de Pareja</h3>
         <p>Cuando la comunicación se deteriora o los conflictos se repiten, esta terapia ayuda a reconstruir la conexión desde la escucha activa y el compromiso.</p>
-      </div>
-    </div>
-  </section>
-  <section id="servicios-2" class="services-section">
-    <div class="services-container">
-      <!-- Tarjeta 3: Terapia Familiar -->
-      <div class="service-card">
+        </div>
+
+        <div class="service-card">
         <img src="assets/img/terapia_familiar.jpg" alt="Terapia Familiar">
         <h3>Terapia Familiar</h3>
         <p>Mejora en las relaciones familiares, manejo de límites y apoyo en duelos o cambios generacionales. Fortalecemos los vínculos desde el respeto y la empatía.</p>
-      </div>
+        </div>
 
-      <!-- Tarjeta 4: Adultos Mayores -->
-      <div class="service-card">
+        <div class="service-card">
         <img src="assets/img/Terapia_adulto_mayor.jpg" alt="Adultos Mayores">
         <h3>Adultos Mayores</h3>
         <p>Acompañamiento emocional en etapas de jubilación, pérdida o soledad. Recuperamos sentido, autoestima y bienestar en esta etapa vital.</p>
-      </div>
+        </div>
+
     </div>
-  </section>
-
-  <section id="mensaje-central" class="full-image-text">
-      <!-- Lado izquierdo: texto inspirador -->
-      <div class="text-side">
-        <h2 class="fira-sans-extralight">Es el momento de recupera el control de tu vida.</h2>
-        <a href="https://api.whatsapp.com/send?phone=+5635387909&text=Agendar%20cita" target="_blank" class="btn-primary">Agenda tu cita</a>
-      </div>
-
-      <!-- Lado derecho: solo imagen -->
-      <div class="image-side">
-        <img src="assets/img/Consultorio5.jpg" alt="Sanar emociones, recuperar el sentido">
-      </div>
+    </section>
+    <section class="motivational">
+    <div class="mot-text">
+        <h2>Es el momento de recuperar el control de tu vida.</h2>
+        <button class="btn-outline">Agenda tu cita</button>
+    </div>
+    <div class="mot-image">
+        <img src="https://images.pexels.com/photos/2099737/pexels-photo-2099737.jpeg?_gl=1*k5lglj*_ga*MTE0NjYyNjMwLjE3NjI1NzE1MzE.*_ga_8JE65Q40S6*czE3NjI2MzE0MjMkbzMkZzEkdDE3NjI2MzE2OTckajEwJGwwJGgw" alt="Consultorio de psicoterapia">
+    </div>
     </section>
 
-    <section id="proceso" class="proceso-trabajo">
-    <div class="container">
-      <h2 class="fira-sans-extralight">Proceso de Trabajo</h2>
-      <p class="subtitle">Un enfoque claro y estructurado para tu bienestar emocional.</p>
-
-      <div class="proceso-grid">
-        <!-- Paso 1: Evaluación -->
-        <div class="paso">
-          <div class="icono">
-            <img src="assets/img/evaluacion.png" alt="Evaluación">
-          </div>
-          <h3 class="fira-sans-extralight">Evaluación</h3>
-          <p>Escucha activa y análisis de tu historia, necesidades y objetivos. Es el primer paso para entender tu situación actual.</p>
-        </div>
-
-        <!-- Paso 2: Plan de Tratamiento -->
-        <div class="paso">
-          <div class="icono">
-            <img src="assets/img/Plan_de_tratamiento.png" alt="Plan de Tratamiento">
-          </div>
-          <h3 class="fira-sans-extralight">Plan de Tratamiento</h3>
-          <p>Diseñamos juntos un camino personalizado con metas claras, herramientas prácticas y estrategias cognitivo-conductuales.</p>
-        </div>
-
-        <!-- Paso 3: Monitoreo -->
-        <div class="paso">
-          <div class="icono">
-            <img src="assets/img/Monitoreo.png" alt="Monitoreo">
-          </div>
-          <h3 class="fira-sans-extralight">Monitoreo</h3>
-          <p>Seguimiento continuo del progreso, ajuste de estrategias y refuerzo de avances para garantizar resultados sostenibles.</p>
-        </div>
-      </div>
+    <section class="proceso">
+    <div class="proceso-header">
+        <h2>Proceso de Trabajo</h2>
+        <p>Un enfoque claro y estructurado para tu bienestar emocional.</p>
     </div>
-  </section>
 
-  
+    <div class="proceso-grid">
+        <!-- Evaluación -->
+        <div class="card-container">
+        <div class="card">
+            <div class="front-content">
+            <p>Evaluación</p>
+            </div>
+            <div class="content">
+            <p class="heading">Evaluación</p>
+            <p>Escucha activa y análisis de tu historia, necesidades y objetivos. Es el primer paso para entender tu situación actual.</p>
+            </div>
+        </div>
+        </div>
 
-  <section id="frase" class="quote-section">
-    <div class="quote-content">
-      <blockquote class="fira-sans-extralight">
-        Sanar no es volver a ser quien eras, <br>
+        <!-- Plan de Tratamiento -->
+        <div class="card-container">
+        <div class="card">
+            <div class="front-content">
+            <p>Plan de Tratamiento</p>
+            </div>
+            <div class="content">
+            <p class="heading">Plan de Tratamiento</p>
+            <p>Diseñamos juntos un camino personalizado con metas claras, herramientas prácticas y estrategias cognitivo-conductuales.</p>
+            </div>
+        </div>
+        </div>
+
+        <!-- Monitoreo -->
+        <div class="card-container">
+        <div class="card">
+            <div class="front-content">
+            <p>Monitoreo</p>
+            </div>
+            <div class="content">
+            <p class="heading">Monitoreo</p>
+            <p>Seguimiento continuo del progreso, ajuste de estrategias y refuerzo de avances para garantizar resultados sostenibles.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+    <section class="franja">
+    <p>
+        Sanar no es volver a ser quien eras,<br>
         es permitirte ser quien ahora necesitas.
-      </blockquote>
+    </p>
+    </section>
+    <section class="sobre-mi" id="sobre-mi">
+    <div class="sobre-mi-content">
+        <div class="sobre-mi-img">
+        <img src="assets/img/Myr_Consultorio.jpg" alt="Psicoterapeuta Myriam Arroyo Nava">
+        </div>
+        <div class="sobre-mi-texto">
+        <h2>Sobre Mí</h2>
+        <p>
+            Soy la Psc. <strong>Myriam Arroyo Nava</strong>, especializada en <strong>Terapia Humanista</strong>.  
+            Creo que cada persona tiene la capacidad de sanar, crecer y transformar su realidad desde el autocuidado, la comprensión emocional y herramientas prácticas.
+        </p>
+        </div>
     </div>
-  </section>
+    </section>
+    <!-- 🌟 Sección de Testimonios -->
+    <section class="testimonios-section" id="testimonios">
+    <div class="testimonios-container">
+        <h2>Testimonios</h2>
+        <p class="subtitulo">Lo que mis pacientes dicen sobre su experiencia terapéutica</p>
 
-  <section id="sobre-mi" class="about-me">
-    <div class="about-container-center">
-      
-      <!-- Imagen redonda y pequeña -->
-      <div class="about-image-circle">
-        <img src="assets/img/Myr_Consultorio.jpg" alt="Psc. Myriam Arroyo Nava">
-      </div>
-
-      <!-- Texto centrado -->
-      <div class="about-text-center">
-        <h2 class="fira-sans-extralight">Sobre Mí</h2>
-        <p>Soy la Psc. Myriam Arroyo Nava, especializada en Terapia Humanista. Creo que cada persona tiene la capacidad de sanar, crecer y transformar su realidad desde el autocuidado, la comprensión emocional y herramientas prácticas.</p>
-        <!--p>He acompañado a personas y familias en procesos de ansiedad, duelo, crisis de pareja y momentos de incertidumbre. Mi enfoque es claro, empático y orientado a resultados.</p>
-        <p>Mi propósito: ayudarte a recuperar el sentido, reconstruir tu bienestar y vivir desde la claridad emocional.</p-->
-      </div>
+        <!-- Elfsight Google Reviews -->
+        <script src="https://elfsightcdn.com/platform.js" async></script>
+        <div class="elfsight-app-ee399f46-6826-439a-a7af-e780f5b941a5" data-elfsight-app-lazy></div>
     </div>
-  </section>
-  <section id="contacto" class="contact-footer">
-    <div class="container">
+    </section>
+    <section class="paquetes" id="paquetes">
+    <h2 class="paquetes-title">Paquetes de Terapia</h2>
+    <p class="paquetes-subtitle">Elige el plan que mejor se adapte a tus necesidades.</p>
 
-      <!-- Logo -->
-      <div class="contact-logo">
-        <img src="assets/img/logo_blanco_myr.png" alt="Logo Psc. Myriam Arroyo Nava">
-      </div>
+    <div class="wrapper">
+        <input id="tab-1" name="slider" type="radio" checked />
+        <input id="tab-2" name="slider" type="radio" />
+        <input id="tab-3" name="slider" type="radio" />
 
-      <!-- Datos de contacto en fila -->
-      <div class="contact-info">
-        <div class="info-item">
-          <strong class="fira-sans-extralight">Oficina</strong>
-          <p>Av. Guillermo Prieto 13, Santa Ana Sur,<br> Tláhuac. C.P. 13300, CDMX</p>
+        <header>
+        <label class="tab-1" for="tab-1">Individual</label>
+        <label class="tab-2" for="tab-2">Parejas</label>
+        <label class="tab-3" for="tab-3">Familiar</label>
+        <div class="slider"></div>
+        </header>
+
+        <div class="card-area">
+        <div class="cards">
+            <!-- 🧠 Individual -->
+            <div class="row row-1">
+            <div class="price-details">
+                <span class="price">650</span>
+                <p>Por sesión</p>
+            </div>
+            <ul class="features">
+                <li><i>✔</i><span>Sesión individual de 60 minutos</span></li>
+                <li><i>✔</i><span>Enfoque Humanista y Cognitivo-Conductual</span></li>
+                <li><i>✔</i><span>Seguimiento personalizado</span></li>
+                <li><i>✔</i><span>Atención presencial o en línea</span></li>
+            </ul>
+            </div>
+
+            <!-- 💞 Parejas -->
+            <div class="row">
+            <div class="price-details">
+                <span class="price">950</span>
+                <p>Por sesión</p>
+            </div>
+            <ul class="features">
+                <li><i>✔</i><span>Sesión de 75 minutos para parejas</span></li>
+                <li><i>✔</i><span>Comunicación empática y resolución de conflictos</span></li>
+                <li><i>✔</i><span>Ejercicios de reconexión emocional</span></li>
+                <li><i>✔</i><span>Guía de prácticas entre sesiones</span></li>
+            </ul>
+            </div>
+
+            <!-- 🌱 Intensivo -->
+            <div class="row">
+            <div class="price-details">
+                <span class="price">2800</span>
+                <p>Programa de 4 sesiones</p>
+            </div>
+            <ul class="features">
+                <li><i>✔</i><span>4 sesiones individuales de 60 min</span></li>
+                <li><i>✔</i><span>Plan de acompañamiento emocional</span></li>
+                <li><i>✔</i><span>Material de trabajo terapéutico</span></li>
+                <li><i>✔</i><span>Evaluación de progreso</span></li>
+            </ul>
+            </div>
         </div>
-        <div class="info-item">
-          <strong class="fira-sans-extralight">Teléfono</strong>
-          <p>+52 (56) 3538 7909 </p>
         </div>
-        <div class="info-item">
-          <strong class="fira-sans-extralight">Correo</strong>
-          <p>reconoserc@gmail.com</p>
+
+        <button>Agendar plan</button>
+    </div>
+    </section>
+    <!-- 🌿 FOOTER -->
+    <footer class="footer" id="contacto">
+    <div class="footer-container">
+        <div class="footer-logo">
+        <img src="assets/img/logo_blanco_myr.png" alt="Firma Myriam Arroyo Nava" />
         </div>
-      </div>
 
-      <!-- Línea horizontal -->
-      <div class="divider"></div>
+        <div class="footer-info">
+        <div class="footer-column">
+            <h3>Oficina</h3>
+            <p>
+            Av. Guillermo Prieto 13, Santa Ana Sur,<br />
+            Tláhuac. C.P. 13300, CDMX
+            </p>
+        </div>
 
-      <!-- Copyright -->
-      <div class="copyright">
+        <div class="footer-column">
+            <h3>Teléfono</h3>
+            <p><a href="tel:+525635387909">+52 (56) 3538 7909</a></p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Correo</h3>
+            <p><a href="mailto:reconoserc@gmail.com">reconoserc@gmail.com</a></p>
+        </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <hr />
         <p>© 2025 Hecho con amor — FILM</p>
-      </div>
-
     </div>
-  </section>
-  <!-- Botón para subir al inicio -->
-  <button id="scrollToTop" title="Volver arriba">
-    ↑
-  </button>
-  <script>
-    // Cambiar fondo del header al hacer scroll
-    const header = document.querySelector('.transparent-header');
+    </footer>
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+
+    
+<script>
+  const menuIcon = document.getElementById('menuIcon');
+  const overlayMenu = document.getElementById('overlayMenu');
+
+  menuIcon.addEventListener('click', () => {
+    menuIcon.classList.toggle('active');
+    overlayMenu.classList.toggle('active');
+  });
+
+  // Cerrar el menú al hacer clic en un enlace
+  document.querySelectorAll('.overlay a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuIcon.classList.remove('active');
+      overlayMenu.classList.remove('active');
     });
-  </script>
+  });
+</script>
 
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-<!-- Three.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="script.js"></script>
-</body>
-
-</html>
-
+    </body>
+    </html>
