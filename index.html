@@ -1,5 +1,5 @@
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="es">
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,7 +69,6 @@
     color: #db42a1;
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
     }
 
     .hero-content h1 {
@@ -461,10 +460,8 @@
     }
     /* 📱 Responsive */
     @media (max-width: 768px) {
-    .card-container {
-        width: 100%;
-        max-width: 320px;
-        height: 280px;
+       .hero-content h2 {
+      margin-top:40px;
     }
     }
 
@@ -974,7 +971,6 @@
   height: 100vh;
   background: rgba(0,0,0,0.95);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: right 0.4s ease;
@@ -984,9 +980,7 @@
 .overlay.active {
   right: 0;
 }
-.logo.mobile{
-    width: 20%;
-}
+
 .overlay ul {
   list-style: none;
   text-align: center;
@@ -1041,7 +1035,6 @@
 
 <!-- MENÚ OVERLAY -->
 <nav class="overlay" id="overlayMenu">
-     <img src="assets/img/logo_blanco_myr.png" alt="Logo Myriam Arroyo Nava" class="logo mobile">
   <ul>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
@@ -1304,6 +1297,3 @@
 
     </body>
     </html>
-
-
-
